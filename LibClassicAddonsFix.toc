@@ -1,0 +1,17 @@
+## Interface: 30403
+## Version: @project-version@
+## Title: LibClassicAddonsFix
+## Notes: Fix classic addons lua errors, that are caused by API changes in different WOW expansions or regions. Typical lua errors like C_AddOns.xxx attempt to call field 'IsAddOnLoaded' (a nil value), C_Item.xxx attempt to call field 'GetItemInfo' (a nil value)
+## Notes-znCN: 修正解决一些怀旧服插件的lua报错，通常是由于不同资料片版本、不同地区服务器的API变化和差异。典型的这类错误包括 C_AddOns.xxx 产生的 attempt to call field 'IsAddOnLoaded' (a nil value) 报错， C_Item.xxx 产生的 attempt to call field 'GetItemInfo' (a nil value)
+## Author: doneykoo
+## DefaultState: enabled
+## LoadOnDemand: 0
+## X-Credits: 
+## X-Website: 
+## X-License: All Rights Reserved
+## X-Category: Library
+## SavedVariables: LibClassicAddonsFixDB
+## Doney Mod
+## OptionalDeps: 
+
+LibClassicAddonsFix.lua
