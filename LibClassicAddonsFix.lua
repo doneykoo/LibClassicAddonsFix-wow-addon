@@ -19,6 +19,24 @@ end
 -- Doney Mod -->>
 local gCAddons = {}
 
+local function g_GetAddOnEnableState(char, addon)
+    return C_AddOns.GetAddOnEnableState(char, addon)
+end
+local function _GetAddOnEnableState(arg1, arg2)
+    local char = arg1
+    local addon = arg2
+    if arg2 == nil then
+        -- for those only pass addon name as 1st param
+        char = UnitName("player")
+        addon = arg1
+    end
+    if arg2 == UnitName("player") then
+        char = arg2
+        addon = arg1
+    end
+    return g_GetAddOnEnableState(char, addon)
+end
+
 local function fixTargetCAddons(t)
     if t.IsAddOnLoaded == nil then
         t.IsAddOnLoaded = gCAddons.IsAddOnLoaded or IsAddOnLoaded
@@ -38,8 +56,9 @@ local function fixTargetCAddons(t)
     if t.GetAddOnMetadata == nil then
         t.GetAddOnMetadata = gCAddons.GetAddOnMetadata or GetAddOnMetadata
     end
+    g_GetAddOnEnableState = gCAddons.GetAddOnEnableState or GetAddOnEnableState
     if t.GetAddOnEnableState == nil then
-        t.GetAddOnEnableState = gCAddons.GetAddOnEnableState or GetAddOnEnableState
+        t.GetAddOnEnableState = _GetAddOnEnableState
     end
     if t.GetNumAddOns == nil then
         t.GetNumAddOns = gCAddons.GetNumAddOns or GetNumAddOns
