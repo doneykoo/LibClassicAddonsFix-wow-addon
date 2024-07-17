@@ -15,3 +15,6 @@
 ## OptionalDeps: 
 
 LibClassicAddonsFix.lua
+feats/fixCAddons.lua
+feats/fixCItem.lua
+feats/fixCUnit.lua
