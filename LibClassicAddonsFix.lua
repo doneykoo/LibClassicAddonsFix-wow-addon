@@ -136,6 +136,9 @@ local function fixCItem()
     if C_Item.IsItemInRange == nil then
         C_Item.IsItemInRange = IsItemInRange
     end
+    if C_Item.GetItemQualityColor == nil then
+        C_Item.GetItemQualityColor = GetItemQualityColor
+    end
 end
 
 fixCItem();
