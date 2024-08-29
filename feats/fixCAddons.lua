@@ -50,6 +50,9 @@ local function fixTargetCAddons(t)
     if t.GetNumAddOns == nil then
         t.GetNumAddOns = gCAddons.GetNumAddOns or GetNumAddOns
     end
+    if t.LoadAddOn == nil then
+        t.LoadAddOn = gCAddons.LoadAddOn or LoadAddOn
+    end
 end
 
 local function fixCAddons()
@@ -79,14 +82,6 @@ local function fixCAddons()
             _G.C_AddOns = {}
         end
         fixTargetCAddons(_G.C_AddOns)
-    end
-
-    if C_Addons == nil or C_Addons.IsAddOnLoaded == nil then
-        lib.LOGD("Fix for C_Addons ...")
-        if C_Addons == nil then
-            _G.C_Addons = {}
-        end
-        fixTargetCAddons(_G.C_Addons)
     end
 end
 
